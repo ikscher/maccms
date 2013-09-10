@@ -1,0 +1,1 @@
+﻿document.writeln('<a href="http://tt.showkey.tv" target="_blank"><img name="ad" src="'+maccms_path+'template/default/images/switchbg.jpg" width="980" height="90" alt="head" style="background-color: #CCCCCC" /></a>');
