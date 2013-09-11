@@ -1,5 +1,5 @@
 <?php
-define("app_sitename","苹果电影程序");      //网站名称
+define("app_sitename","安徽影城票网");      //网站名称
 define("app_installdir","/maccms/");        //网站路径
 define("app_siteurl","localhost");        //网站域名地址
 define("app_keywords","免费在线电影");        //网站关键字
@@ -13,18 +13,19 @@ define("app_picpath",1);      //图片保存路径方式，0=默认,1=按月份,
 define("app_dbtype","mysql");      //数据库类型: 值分别为 access ; mssql
 define("app_dbpath","");      //access数据库路径
 define("app_dbserver","localhost");      //SQL数据库服务器地址
-define("app_dbname","maccms");      					  //SQL数据库名称
+define("app_dbname","ahyc");      					  //SQL数据库名称
 define("app_dbuser","root");      //SQL数据库用户名
 define("app_dbpass","123456");      					  //SQL数据库密码
 define("app_tablepre","mac_");      					  //表结构前缀
 define("app_icp","");      //网站备案号
+define("app_year",date('Y')); //当前年份
 define("app_email","123456@maccms.com");      //站长邮箱
 define("app_qq","123456");      //站长qq
 define("app_user",1);          //是否开启会员验证0关闭，1开启
 define("app_dynamiccache",0);          //是否开启动态文件缓存0关闭，1开启
 define("app_timming",0);          //是否开启定时任务0关闭,1开启
 define("app_install",1);          //是否已经安装本程序0未安装，1已安装
-define("app_safecode","maccms");      //后台登录安全码
+define("app_safecode","ahyc");      //后台登录安全码
 
 define("app_vodplayersort",0);        //视频播放器显示顺序0添加顺序，1全局顺序
 define("app_vodmaccjsname",0);        //联盟资源库入库时重名判断条件0名称，1名称+分类
@@ -57,7 +58,7 @@ define("app_arttopicpath","arttopichtml/{id}");          //文章专题页目录
 
 define("app_watermark",0);          //上传的图片是否添加水印 0关闭，1开启
 define("app_waterlocation",2);          //水印在图片的位置
-define("app_waterfont","MacCMS.Com");          //水印文字
+define("app_waterfont","AnHuiYingCheng");          //水印文字
 define("app_gbook",1);        //是否开启留言本 0关闭，1开启
 define("app_gbooknum",10);        //留言本每页显示数量
 define("app_gbooktime",10);        //留言时间间隔

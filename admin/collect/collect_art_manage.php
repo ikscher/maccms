@@ -177,8 +177,12 @@ function isNum(s){
 	r = s.match(re);
 	return (r==s);
 }
-function getBody(str,s1,s2){
 
+/*
+ * 从str字符串截取 以 s1打头，s2结尾中间字符。
+ *
+ */
+function getBody(str,s1,s2){
 	if(s2=='') return false;
 	var tstr=str.toLowerCase(),ind=tstr.indexOf(s1.toLowerCase()),sLen=s1.length;
 	if(ind==-1) return false;
@@ -188,6 +192,14 @@ function getBody(str,s1,s2){
 	return str.substr(ind,tstr.slice(ind).indexOf(s2.toLowerCase()));
 }
 
+/*
+ *  比如：ls  值为['index.php?action=m','model=jou','v=23']
+ *        curl 值为 http://www.g901.com/w
+ *        那么返回的 ls值 就为
+ *        1：http://www.g901.com/w/index.php?action=m
+ *        2: http://www.g901.com/w/model=jou
+ *        3: http://www.g901.com/w/v=23
+ */
 function definiteUrl(ls,curl){
 	var b,t,H,i,j,k,siteUrl,rg=/^\s*[\/\\]/i,ab=/^http:\/\//i,qt=/\\([\\\/])/ig;
 	curl=trim(curl).replace(qt,"/");
@@ -372,6 +384,7 @@ function nextstep(){
                         console.log($("#p_listlinkend").val());
         
 			var mlink=getBody(listcutcode,$("#p_listlinkstart").val(),$("#p_listlinkend").val());
+                        
 			if(mlink==false){if(!confirm("截取 链接开始~链接结束 失败\n\n点[确定]忽略这错误提示，[取消]返回修改")){return;}}
 			if($("input[name='p_titletype']:checked").val()=="1"){
 				var title = getBody(listcutcode, $("#p_listtitlestart").val(), $("#p_listtitleend").val() );
@@ -381,7 +394,7 @@ function nextstep(){
 				var starring = getBody(listcutcode, $("#p_listauthorstart").val() , $("#p_listauthorend").val() );
 				if(starring==false){if(!confirm("截取 主演开始~主演结束 失败\n\n点[确定]忽略这错误提示，[取消]返回修改")){return;}}
 			}
-			contenturl = definiteUrl([mlink],listurl);
+			contenturl = definiteUrl([mlink],listurl); 
 			
 			showurl(contenturl);
 			$.ajax({ cache: false, dataType: 'html', type: 'GET', url: 'collect_art_manage.php?action=getcode&charset=' + $("#p_coding").val() + '&url=' + encodeURI(contenturl),

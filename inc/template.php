@@ -651,6 +651,7 @@ class AppTemplate
         $this->html = replaceStr($this->html, "{maccms:description}", app_description);
         $this->html = replaceStr($this->html, "{maccms:icp}", app_icp);
         $this->html = replaceStr($this->html, "{maccms:qq}", app_qq);
+        $this->html = replaceStr($this->html, "{maccms:year}", app_year);
         $this->html = replaceStr($this->html, "{maccms:email}", app_email);
         
         $this->html = replaceStr($this->html, "{maccms:appid}", $mac["appid"]);
@@ -923,7 +924,7 @@ class AppTemplate
         if (!isNum($this->par_num)){ $topstr = ""; $this->startnum = $this->par_start;} else { $par_num = intval($this->par_num); $this->startnum = $this->par_start; $topstr = " limit 0," . ($this->par_num + $this->startnum); }
         
         $sql = "SELECT t_id,t_name,t_enname,t_pid,t_key,t_des FROM {pre}" . $this->par_table . "_type WHERE t_hide=0 ";
-        
+    
         if ($this->par_type == "all"){
         }
         else if ($this->par_type== "parent"){

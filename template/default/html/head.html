@@ -50,7 +50,7 @@
   {maccms:menulist table=vod type=parent by=id order=asc}
   <li {if:{maccms:curvodtypeid}=[menulist:id]} class=current{end if}><a href="[menulist:link]"><SPAN>[menulist:name]</SPAN></A></li>
   {/maccms:menulist}
-  <li style="position:relative;" {if:{maccms:appid}=20} class=current{end if}><A href="{maccms:artindexlink}" ><SPAN>阅  读</SPAN></a><em></em></li>
+  <li style="position:relative;" {if:{maccms:appid}=20} class=current{end if}><A href="{maccms:artindexlink}" ><SPAN>资讯</SPAN></a><em></em></li>
   <li {if:{maccms:appid}=12} class=current{end if} {if:{maccms:appid}=22} class=current{end if}><a href="{maccms:vodtopiclink}" ><SPAN>专  题</SPAN></a></li>
   <li {if:{maccms:appid}=11} class=current{end if}><a href="{maccms:vodmaplink}" ><SPAN>全  部</SPAN></a></li>
 </ul>

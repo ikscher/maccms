@@ -10,9 +10,10 @@
 */
 ?>
 <?php
-	require_once ("inc/config.php");
-	if(app_install==0){ header("Location:install/index.php" );	}
-	require_once ("inc/conn.php");
+    require_once ("inc/config.php");
+    if(app_install==0){ header("Location:install/index.php" );	}
+    require_once ("inc/conn.php");
+    
     $page = be("all", "page");
     if (!isNum($page)){ $page = 1;} else { $page = intval($page);}
     if ($page < 1){ $page = 1;}
